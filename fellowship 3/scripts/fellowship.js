@@ -21,3 +21,9 @@ var body = document.body;
 
 
 
+
+var landsList = document.createElement("section")
+landsList.id = "middle-earth"
+"middle-earth"
+<section id=​"middle-earth">​</section>​
+body.appendChild(landsList)

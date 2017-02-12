@@ -73,6 +73,7 @@ article:nth-child(3) {
   background-position: 0em -0.9em;
   background-size: 7em;
   height: 25%;
+  list-style: none
 }
 
 article:nth-child(3) h1:hover {
@@ -91,6 +92,7 @@ h1 {
 ul {
   margin: 0 0 0 0;
   text-shadow: 1px 1px #000000;
+  list-style: none;
 }
 
 .magic-imbued-jewelry {
@@ -112,6 +114,14 @@ ul {
   background-size: cover;
   height: inherit;
   width: inherit;
+}
+
+.gandalf{
+  background: white;
+  border: solid 3px grey;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 

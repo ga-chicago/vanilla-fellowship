@@ -63,14 +63,17 @@ var makeMiddleEarth = function() {
 	middleEarth.appendChild(mordor);
 
 	body.appendChild(middleEarth);
+
 	
 };
+	console.log(makeMiddleEarth());
 
 //part 2
 
 var makeHobbits = function() {
 
 	var hobbitUl = document.createElement('ul');
+	// hobbitUl.setAttribute('id', 'hobbs')
 
  	for(var i = 0; i < hobbits.length; i++) {
         // Create the list item:
@@ -88,6 +91,8 @@ var makeHobbits = function() {
 	shire.appendChild(hobbitUl);
 
 };
+
+console.log(makeHobbits());
 
 //part 3
 
@@ -109,6 +114,7 @@ var makeBuddies = function() {
 	var aside = document.createElement('aside');
 	var buddiesUl = document.createElement('ul');
 
+
 	for(var i = 0; i < buddies.length; i++) {
         // Create the list item:
         var buddiesLi = document.createElement('li');
@@ -125,7 +131,7 @@ var makeBuddies = function() {
     rivendell.appendChild(aside);
 
 };
-
+console.log(makeBuddies());
 //part 5
 
 var beautifulStranger = function(){
@@ -137,6 +143,108 @@ var beautifulStranger = function(){
 	
 };
 
+//part 6
+
+var leaveTheShire = function(){
 
 
+	var assemble = document.getElementsByTagName('ul')[0];
+	var newAside = document.getElementsByTagName('ul')[1];
+	newAside.innerHTML = assemble.innerHTML + newAside.innerHTML;
+	
+
+
+	var shireUl = document.getElementsByTagName('ul')[0];
+	shireUl.remove(shireUl);
+
+	
+}
+
+//part 7  dont know how to get them out and in
+
+var forgeTheFellowShip = function(){
+	var theFellowShip = document.createElement('div');
+	var theFellowShipText = document.createTextNode('The FellowShip');
+	theFellowShip.appendChild(theFellowShipText);
+	rivendell.appendChild(theFellowShip);
+
+
+
+	}
+}
+
+//part 8
+
+var theBalrog = function(){
+	var gandalf = document.getElementsByClassName('buddies')[0];
+	
+	gandalf.innerHTML = ('Gandalf the White');
+	gandalf.style.backgroundColor = "#ffffff";
+	gandalf.style.border ="grey";
+
+};
+
+// part 9
+
+var hornOfGondor = function(){
+	alert('The Horn of Gondor has been blown');
+
+	var deadBoromir = document.getElementsByClassName('buddies')[4];
+	deadBoromir.remove(deadBoromir);
+
+};
+
+//part 10
+
+var itsDangerousToGoAlone = function(){
+	
+var fellows = document.getElementsByTagName('ul')[0];
+
+	for (var i = 0; i <= 1; i++) {
+		var bestFriends = document.createElement('li');
+		
+
+		bestFriends.appendChild(document.createTextNode(fellows[i]));
+
+		mordor.appendChild(bestFriends);
+	}
+
+	var mountDoom = document.createElement('div');
+	mountDoom.setAttribute('id', 'mount-doom');
+
+	var  froDoom= document.getElementsByClassName('hobbit')[0];
+	froDoom.remove(froDoom);
+
+	var  samDoom= document.getElementsByClassName('hobbit')[1];
+	samDoom.remove(samDoom);
+
+	//
+
+};
+
+//part 11
+
+var weWantsIt = function() {
+	
+	var baldy = document.createElement('div');
+	baldy.setAttribute('id', 'gollum');
+	mordor.appendChild(baldy);
+
+	frodo.removeChild(ring);
+	baldy.appendChild(ring);
+	
+};
+
+//part 12
+
+var thereAndBackAgain = function(){
+	body.remove(gollum);
+	body.remove(ring);
+
+	for(var i = 0; i < hobbits.length; i++) {
+		shire.appendChild(hobbits[i]);
+	}
+
+
+}
 

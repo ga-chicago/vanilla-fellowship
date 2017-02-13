@@ -151,6 +151,7 @@ var leaveTheShire = function(){
 	var assemble = document.getElementsByTagName('ul')[0];
 	var newAside = document.getElementsByTagName('ul')[1];
 	newAside.innerHTML = assemble.innerHTML + newAside.innerHTML;
+
 	
 
 
@@ -161,6 +162,9 @@ var leaveTheShire = function(){
 }
 
 //part 7  dont know how to get them out and in
+//they are al in one a ul well moved over
+//need to grab them from that
+
 
 var forgeTheFellowShip = function(){
 	var theFellowShip = document.createElement('div');
@@ -169,9 +173,7 @@ var forgeTheFellowShip = function(){
 	rivendell.appendChild(theFellowShip);
 
 
-
 	}
-}
 
 //part 8
 
@@ -198,13 +200,14 @@ var hornOfGondor = function(){
 
 var itsDangerousToGoAlone = function(){
 	
-var fellows = document.getElementsByTagName('ul')[0];
+// var fellows = document.getElementsByTagName('ul')[0];
+
 
 	for (var i = 0; i <= 1; i++) {
 		var bestFriends = document.createElement('li');
 		
 
-		bestFriends.appendChild(document.createTextNode(fellows[i]));
+		bestFriends.appendChild(document.createTextNode(hobbits[i]));
 
 		mordor.appendChild(bestFriends);
 	}
@@ -230,7 +233,6 @@ var weWantsIt = function() {
 	baldy.setAttribute('id', 'gollum');
 	mordor.appendChild(baldy);
 
-	frodo.removeChild(ring);
 	baldy.appendChild(ring);
 	
 };

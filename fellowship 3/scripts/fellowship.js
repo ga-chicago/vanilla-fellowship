@@ -152,10 +152,11 @@ var itsDangerousToGoAlone = function(){
 itsDangerousToGoAlone();
 
 // We wants it
-var weWantsIt = function(){
-	var gollum = document.createElement('div');
+var gollum = document.createElement('div');
 		gollum.id = 'gollum';
 	mordor.appendChild(gollum);
+
+var weWantsIt = function(){
 
 	var theRing = document.getElementsByTagName('div')[2];
 	gollum.appendChild(theRing);
@@ -168,8 +169,21 @@ weWantsIt();
 // There and back again
 
 var thereAndBackAgain = function(){
+	gollum.remove();
+	var myHobbits = document.getElementsByTagName('ul')[1];
+	var mordorHobbitFrodo = document.getElementsByTagName('li')[6];
+	var mordorHobbitSam = document.getElementsByTagName('li')[7];
+	var theShire = document.getElementsByTagName('article')[0];
 
-}
+	myHobbits.appendChild(mordorHobbitFrodo);
+	myHobbits.appendChild(mordorHobbitSam);
+	theShire.appendChild(myHobbits);
+};
+
+thereAndBackAgain();
+
+
+
 
 
 

@@ -101,12 +101,12 @@ var forgeTheFellowship = function(){
 	var movingHobbits = section.children[1].children[2].children[0].children;
 	var movingBuddies = section.children[1].children[1].children[0].children;
 
-	// for(var i=0; i < movingHobbits.length; i++){
-	// 	alert(movingHobbits[i].innerText + ' has joined the Fellowship')
-	// }
-	// for(var i = 0; i < movingBuddies.length; i++){
-	// 	alert(movingBuddies[i].innerText + ' has joined the Fellowship')
-	// }
+	for(var i=0; i < movingHobbits.length; i++){
+		alert(movingHobbits[i].innerText + ' has joined the Fellowship')
+	}
+	for(var i = 0; i < movingBuddies.length; i++){
+		alert(movingBuddies[i].innerText + ' has joined the Fellowship')
+	}
 	
 	var fellowshipDiv = section.children[1].children[3];
 
@@ -130,7 +130,7 @@ theBalrog();
 
 //	Horn of Gondor
 var hornOfGondor = function(){
-	// alert("The Horn of Gondor has been blown. Boromir's been killed by the Uruk-hai!")
+	alert("The Horn of Gondor has been blown. Boromir's been killed by the Uruk-hai!")
 	var boromir = document.getElementsByTagName('li')[4];
 	boromir.remove();
 }

@@ -32,9 +32,10 @@ makeMiddleEarth();
 #### Part 2
 ```js
 var makeHobbits = function () {
-   // display an `unordered list` of hobbits in the shire
-      // (which is the second article tag on the page)
-   // give each hobbit a class of `hobbit`
+// create a section tag with an id of `middle-earth`
+// add each land as an `article` tag
+// inside each `article` tag include an `h1` with the name of the land
+// append `middle-earth` to your document `body`
 };
 ```
 

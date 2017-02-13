@@ -21,7 +21,7 @@ going on an adventure.
 ```js
 var makeMiddleEarth = function () {
    // create a section tag with an id of `middle-earth`
-   // add each land as an `article` tag
+   // add each land as an `article` tag`
    // inside each `article` tag include an `h1` with the name of the land
    // append `middle-earth` to your document `body`
 };

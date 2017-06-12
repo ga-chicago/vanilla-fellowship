@@ -75,7 +75,8 @@ var makeHobbits = function () {
    		  item.innerText = hobbits[i];
    		  	//apend each li to the ul  
    			list.appendChild(item) 
-   			//give class name
+   			//give each li a class of hobbit
+   			item.setAttribute('class', 'hobbit')
    			
    			
    }

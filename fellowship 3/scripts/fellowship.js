@@ -90,11 +90,6 @@ makeHobbits();
 
 
 
-
-
-
-
-
 //Part 3
 
 var keepItSecretKeepItSafe = function () {
@@ -102,7 +97,9 @@ var keepItSecretKeepItSafe = function () {
    var ring = document.createElement('div')
    ring.setAttribute('id','the-ring')
    // give the div a class of `'magic-imbued-jewelry'`
+   ring.setAttribute('class','magic-imbued-jewelry')
    // add the ring as a child of `Frodo`
+   document.getElementsByClassName('hobbit')[0].appendChild(ring)
 };
 
 keepItSecretKeepItSafe();
@@ -112,6 +109,73 @@ keepItSecretKeepItSafe();
 
 var makeBuddies = function () {
    // create an `aside` tag
+   var sider = document.createElement('aside')
    // attach an `unordered list` of the `'buddies'` in the aside
+   var buds = document.createElement('ul');
+   //append ul to the aside
+   sider.appendChild(buds)
+   for(i = 0; i < buddies.length; i++) {
+   	var buddiesitem = document.createElement('li')
+   	buddiesitem.innerText = buddies[i]
+   	//apend li to the ui
+   	buds.appendChild(buddiesitem)
+   }
+
+  
    // insert your aside as a child element of `rivendell`
+   	rivendeller.appendChild(sider)
+
 };
+
+makeBuddies();
+
+//Part 5
+
+var beautifulStranger = function () {
+   // change the `'Strider'` text to `'Aragorn'`
+   buddies[3] = 'Strider'
+};
+
+beautifulStranger()
+
+
+//Part 6
+
+
+var leaveTheShire = function () {
+   // assemble the `hobbits` and move them to `rivendell`
+
+    var move = document.getElementsByTagName('ul')[0]
+    document.getElementsByTagName('aside')[0].appendChild(move)
+};
+
+leaveTheShire();
+
+
+//Part 7
+
+var forgeTheFellowShip = function () {
+   // create a new div called `'the-fellowship'` within `rivendell`
+   var fellowship = document.createElement('div')
+   fellowship.setAttribute('class', 'the-fellowship')
+   document.getElementsByTagName('article')[1].appendChild(fellowship)
+   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+   // after each character is added make an alert that they // have joined your party
+};
+
+forgeTheFellowShip()
+
+//Part 8
+
+var theBalrog = function () {
+   // change the `'Gandalf'` text to `'Gandalf the White'`
+   var gandalf = document.getElementsByTagName('li')[0].innerHTML = 'Gandalf the White'
+   // apply the following style to the element, make the // background 'white', add a grey border
+
+   	document.getElementsByTagName('li')[0].style.backgroundColor = 'white'
+   	document.getElementsByTagName('li')[0].style.border = '2px solid grey'
+
+
+};
+
+theBalrog();

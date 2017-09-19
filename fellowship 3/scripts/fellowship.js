@@ -77,23 +77,55 @@ const makeHobbits = () => {
 	hobbitNames.appendChild(merry);
 	hobbitNames.appendChild(pippin);
 
-	const listItems = document.querySelectorAll('li');
+	frodo.id = "frodo";
+	
+	hobbitses.appendChild(hobbitNames);
 
-	for (let i = 0; i < listItems.length; i++){
-		console.log(listItems[i])
-    	listItems[i].className = "hobbit";
-    	
-    };
-
-	hobbitses.appendChild(hobbitNames)
-
-
-	const shire = document.getElementById("shire");
+    const shire = document.getElementById("shire");
+    console.log(shire)
 	shire.appendChild(hobbitses);
 
+	const listItems = document.querySelectorAll('li');
+
+     for (let i = 0; i < listItems.length; i++){
+    	listItems[i].className = "hobbit";	
+    };
+    const rivendell = document.getElementById("rivendell");
+	console.log(rivendell);
 };
 
 makeHobbits()
+
+// Part 3
+
+const keepItSecretKeepItSafe = () => {
+
+	const ring = document.createElement("div");
+
+	ring.id = "the-ring";
+	ring.className = "magic-imbued-jewelry";
+
+	const frodo = document.getElementById("frodo");
+	frodo.appendChild(ring);
+}
+
+keepItSecretKeepItSafe()
+
+// Part 4
+
+const makeBuddies = () => {
+
+	const friendsList = document.createElement("aside");
+	const buddies = document.createElement("ul");
+
+	const rivendell = document.getElementById("rivendell");
+	
+	friendsList.appendChild(buddies);
+	rivendell.appendChild(friendsList);
+
+};
+
+makeBuddies()
 
 
 

@@ -78,11 +78,11 @@ const makeHobbits = () => {
 	hobbitNames.appendChild(pippin);
 
 	frodo.id = "frodo";
+	hobbitses.id = "hobbits";
 	
 	hobbitses.appendChild(hobbitNames);
 
     const shire = document.getElementById("shire");
-    console.log(shire)
 	shire.appendChild(hobbitses);
 
 	const listItems = document.querySelectorAll('li');
@@ -91,7 +91,6 @@ const makeHobbits = () => {
     	listItems[i].className = "hobbit";	
     };
     const rivendell = document.getElementById("rivendell");
-	console.log(rivendell);
 };
 
 makeHobbits()
@@ -140,8 +139,20 @@ const beautifulStranger = () => {
 
 };
 
-beautifulStranger()
+beautifulStranger();
 
+// Part 6
+
+const leaveTheShire = () => {
+
+	const hobbits = document.getElementById("hobbits");
+	console.log(hobbits);
+	const rivendell = document.getElementById("rivendell");
+	console.log(rivendell);
+	rivendell.appendChild(hobbits);
+};
+
+leaveTheShire();
 
 
 

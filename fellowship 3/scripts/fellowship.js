@@ -127,6 +127,43 @@ const makeBuddies = () => {
 
 makeBuddies()
 
+// Part 5
+
+const beautifulStranger = () => {
+
+	for (i = 0; i <= buddies.length - 1; i++)
+		if (buddies[i] === "Strider") {
+			buddies[i] = "Aragorn";
+		};
+
+//Is there a way to call the value in an array?
+
+};
+
+beautifulStranger()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

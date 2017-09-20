@@ -144,6 +144,7 @@ const makeBuddies = () => {
 
 	gandalf.id = "wizard"
 	strider.id = "ranger"
+	boromir.id = "traitor"
 
 	console.log(sidekicks)
 
@@ -195,7 +196,7 @@ const forgeTheFellowship = () => {
 	rivendell.appendChild(the_fellowship);
 
 	const fOTR = document.createElement("ul");
-	fOTR.id = "fellowship of the ring"
+	fOTR.id = "fellowship_of_the_ring"
 
 	the_fellowship.appendChild(fOTR);
 
@@ -230,7 +231,19 @@ gandalf.style.border = "thick solid grey";
 
 theBalrog();
 
+// Part 9
 
+const hornOfGondor = () => {
+
+	alert("The Horn of Gondor has been blown!");
+
+	const the_fellowship = document.getElementById("fellowship_of_the_ring");
+	console.log(the_fellowship[8]);
+	the_fellowship.removeChild(the_fellowship.childNodes[8]);
+
+}
+
+hornOfGondor();
 
 
 

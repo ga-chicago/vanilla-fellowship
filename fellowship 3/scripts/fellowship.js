@@ -142,6 +142,9 @@ const makeBuddies = () => {
 	strider.className = "support";
 	boromir.className = "support";
 
+	gandalf.id = "wizard"
+	strider.id = "ranger"
+
 	console.log(sidekicks)
 
 	const rivendell = document.getElementById("rivendell");
@@ -157,10 +160,9 @@ makeBuddies()
 
 const beautifulStranger = () => {
 
-	for (i = 0; i <= buddies.length - 1; i++)
-		if (buddies[i] === "Strider") {
-			buddies[i] = "Aragorn";
-		};
+ const strider = document.getElementById("ranger");
+
+ strider.innerText = "Aragorn";
 
 //Is there a way to call the value in an array?
 
@@ -215,7 +217,18 @@ const forgeTheFellowship = () => {
 
 forgeTheFellowship()
 
+// Part 8
 
+const theBalrog = () => {
+
+const gandalf = document.getElementById("wizard");
+gandalf.innerText = "gandalf the white";
+gandalf.style.backgroundColor = "white";
+gandalf.style.border = "thick solid grey";
+
+}
+
+theBalrog();
 
 
 

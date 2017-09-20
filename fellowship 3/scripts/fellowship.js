@@ -78,6 +78,7 @@ const makeHobbits = () => {
 	hobbitNames.appendChild(pippin);
 
 	frodo.id = "frodo";
+	sam.id = "sam";
 	hobbitses.id = "hobbits";
 	hobbitNames.id = "theHobbits";
 	
@@ -146,8 +147,6 @@ const makeBuddies = () => {
 	strider.id = "ranger"
 	boromir.id = "traitor"
 
-	console.log(sidekicks)
-
 	const rivendell = document.getElementById("rivendell");
 	
 	friendsList.appendChild(sidekicks);
@@ -203,8 +202,6 @@ const forgeTheFellowship = () => {
 	const listItems = document.querySelectorAll('li.hobbit');
 	const listItems2 = document.querySelectorAll('li.support');
 
-	console.log(listItems)
-	console.log(listItems2)
 	for (i=0; i< listItems.length; i++){
 		fOTR.appendChild(listItems[i]);
 		alert(listItems[i].innerText + " has joined your party");
@@ -238,15 +235,32 @@ const hornOfGondor = () => {
 	alert("The Horn of Gondor has been blown!");
 
 	const the_fellowship = document.getElementById("fellowship_of_the_ring");
-	console.log(the_fellowship[8]);
+
 	the_fellowship.removeChild(the_fellowship.childNodes[8]);
 
 }
 
 hornOfGondor();
 
+// Part 10
+
+const itsDangerousToGoAlone = () => {
+
+	const the_fellowship = document.getElementById("fellowship_of_the_ring");
+	const mordor = document.getElementById("mordor");
 
 
+	const friends = document.createElement("ul")
+	friends.id = "friends"
+
+	mordor.appendChild(friends);
+
+	friends.appendChild(frodo);
+	friends.appendChild(sam);
+
+}
+
+itsDangerousToGoAlone();
 
 
 

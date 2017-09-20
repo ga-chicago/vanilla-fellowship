@@ -79,6 +79,9 @@ const makeHobbits = () => {
 
 	frodo.id = "frodo";
 	sam.id = "sam";
+	merry.id = "merry";
+	pippin.id = "pippin";
+
 	hobbitses.id = "hobbits";
 	hobbitNames.id = "theHobbits";
 	
@@ -279,10 +282,26 @@ const weWantsIt = () => {
 	mtDoom.id = "mtDoom";
 	mordor.appendChild(mtDoom);
 	mtDoom .appendChild(gollum);
-	
+
 }
 
 weWantsIt();
+
+const thereAndBackAgain = () => {
+
+	const mtDoom = document.getElementById("mtDoom");
+	mtDoom.removeChild(mtDoom.childNodes[0]);
+
+	const hobbits = document.getElementsByClassName("hobbit");
+
+	for (i = 0; i < hobbits.length; i++) {
+		shire.appendChild(hobbits[i]);
+	};
+
+
+}
+
+thereAndBackAgain();
 
 
 

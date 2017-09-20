@@ -251,7 +251,7 @@ const itsDangerousToGoAlone = () => {
 
 
 	const friends = document.createElement("ul")
-	friends.id = "friends"
+	friends.id = "friends";
 
 	mordor.appendChild(friends);
 
@@ -261,6 +261,29 @@ const itsDangerousToGoAlone = () => {
 }
 
 itsDangerousToGoAlone();
+
+// Part 11
+
+const weWantsIt = () => {
+
+	const gollum = document.createElement("div");
+	gollum.id = "gollum";
+
+	const ring = document.getElementById("the-ring");
+
+	gollum.appendChild(ring);
+
+	const morder = document.getElementById("mordor");
+	const mtDoom = document.createElement("div");
+
+	mtDoom.id = "mtDoom";
+	mordor.appendChild(mtDoom);
+	mtDoom .appendChild(gollum);
+	
+}
+
+weWantsIt();
+
 
 
 

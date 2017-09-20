@@ -79,6 +79,7 @@ const makeHobbits = () => {
 
 	frodo.id = "frodo";
 	hobbitses.id = "hobbits";
+	hobbitNames.id = "theHobbits";
 	
 	hobbitses.appendChild(hobbitNames);
 
@@ -115,11 +116,37 @@ keepItSecretKeepItSafe()
 const makeBuddies = () => {
 
 	const friendsList = document.createElement("aside");
-	const buddies = document.createElement("ul");
+	const sidekicks = document.createElement("ul");
+
+	const gandalf = document.createElement("li");
+	const legolas = document.createElement("li");
+	const gimli = document.createElement("li");
+	const strider = document.createElement("li");
+	const boromir = document.createElement("li")
+
+	gandalf.innerText = buddies[0];
+	legolas.innerText = buddies[1];
+	gimli.innerText = buddies[2];
+	strider.innerText = buddies[3];
+	boromir.innerText = buddies[4];
+
+	sidekicks.appendChild(gandalf);
+	sidekicks.appendChild(legolas);
+	sidekicks.appendChild(gimli);
+	sidekicks.appendChild(strider);
+	sidekicks.appendChild(boromir);
+
+	gandalf.className = "support";
+	legolas.className = "support";
+	gimli.className = "support";
+	strider.className = "support";
+	boromir.className = "support";
+
+	console.log(sidekicks)
 
 	const rivendell = document.getElementById("rivendell");
 	
-	friendsList.appendChild(buddies);
+	friendsList.appendChild(sidekicks);
 	rivendell.appendChild(friendsList);
 
 };
@@ -146,13 +173,47 @@ beautifulStranger();
 const leaveTheShire = () => {
 
 	const hobbits = document.getElementById("hobbits");
-	console.log(hobbits);
+
 	const rivendell = document.getElementById("rivendell");
-	console.log(rivendell);
+
 	rivendell.appendChild(hobbits);
 };
 
 leaveTheShire();
+
+// Part 7
+
+const forgeTheFellowship = () => {
+
+	const the_fellowship = document.createElement("div");
+
+	the_fellowship.id = "fellowship";
+	const rivendell = document.getElementById("rivendell");
+
+	rivendell.appendChild(the_fellowship);
+
+	const fOTR = document.createElement("ul");
+	fOTR.id = "fellowship of the ring"
+
+	the_fellowship.appendChild(fOTR);
+
+	const listItems = document.querySelectorAll('li.hobbit');
+	const listItems2 = document.querySelectorAll('li.support');
+
+	console.log(listItems)
+	console.log(listItems2)
+	for (i=0; i< listItems.length; i++){
+		fOTR.appendChild(listItems[i]);
+		alert(listItems[i].innerText + " has joined your party");
+	};
+
+	for (i=0; i< listItems2.length; i++){
+		fOTR.appendChild(listItems2[i]);
+		alert(listItems2[i].innerText + " has joined your party");
+	};
+}
+
+forgeTheFellowship()
 
 
 

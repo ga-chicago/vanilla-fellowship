@@ -1,233 +1,179 @@
-console.log("Linked.");
- 
 // Dramatis Personae
-var hobbits = [
+const hobbits = [
   'Frodo Baggins',
   'Samwise \'Sam\' Gamgee',
   'Meriadoc \'Merry\' Brandybuck',
   'Peregrin \'Pippin\' Took'
 ];
 
-var buddies = [
+const buddies = [
   'Gandalf the Grey',
   'Legolas',
   'Gimli',
   'Strider',
-  'Boromir'
+  'Boromir',
+  'Todd Herskovitz of the Hill People'
 ];
-var the_lands = [];
-var the_hobbits = [];
-var lands = ['The Shire', 'Rivendell', 'Mordor'];
-var body = document.body;
 
-const middle_earth = document.createElement('section');
-the_shire = document.createElement('article');
-middle_earth.appendChild(the_lands[0]);
-document.body.appendChild(middle_earth);
+const lands = ['The Shire', 'Rivendell', 'Mordor'];
+const body = $('body');
 
-
-   // display an `unordered list` of hobbits in the shire
-      // (which is the second article tag on the page)
-   // give each hobbit a class of `hobbit`
-
-const ul = document.createElement('ul');
-
-for (i = 1; i < hobbits.length; i++) {
-the_hobbits[i] = document.createElement('li');
-the_hobbits[i].innerText = hobbits[i];
+const makeMiddleEarth = () => {
+    // create a section tag with an id of middle-earth
+    const middleEarth = $('<section ID="middle-earth">');
+    for(let i = 0; i < lands.length; i++) {
+      // add each land as an article tag
+      const land = $('<article>');
+      // inside each article tag include an h1 with the name of the land
+      const name = $('<h1>')
+      name.text(lands[i])
+      land.append(name);
+      middleEarth.append(land);
+    }
+    // append middle-earth to your document body
+    body.append(middleEarth);
 }
-
-   // create a div with an id of `'the-ring'`
-   // give the div a class of `'magic-imbued-jewelry'`
-   // add the ring as a child of `Frodo`
-
-   var ring = document.createElement('div');
-   ring.id = 'the ring';
-   ring.class = 'magic-imbued-jewelry';
-
-   the_hobbits[0].appendChild(div);
-
-   // create an `aside` tag
-   // attach an `unordered list` of the `'buddies'` in the aside
-   // insert your aside as a child element of `rivendell`
-
-const ul2 = document.createElement('ul')
-var aside = document.createElement('aside') {
-for (i = 1; i < hobbits.length; i++) {
-the_buddoes[i] = document.createElement('li');
-the_buddies[i].innerText = buddies[i];
-}
-the_buddies[3].innerText = "Aragorn";
-
-the_lands[1].appendChild(the_hobbits);
-
-   // create a new div called `'the-fellowship'` within `rivendell`
-   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
-   // after each character is added make an alert that they // have joined your party
-
-var thefellowship = document.createElement('div');
-
-the_lands[1].appendChild(div2);
-thefellowship.appendChild(the_hobbits);
-thefellowship.appendChild(the_buddies);
-
-var theBalrog = function () {
-   // change the `'Gandalf'` text to `'Gandalf the White'`
-   // apply the following style to the element, make the // background 'white', add a grey border
-};
-
-
-var Gandalf = document.createElement('div');
-Gandalf.innerText = "Gandalf the White";
-Gandalf.style.backgroundColor = 'blue'
-Gandalf.style.border = 'grey'
-
-alert("boromir has been killed");
-thefellowship.removeChild(boromor);
-
-//thefellowship.removeChild(sam);
-//thefellowship.removeChild(frodo);
-
-mordor.appendChild(sam)
-mordor.appendChild(frodo)
-
-
-var mount_doom = document.createElement('div');
-mordor.appendChild(mount_doom);
-
-var gollum = document.createElement('div');
-
-mordor.appendChild(gollum);
-
-mordor.removeChild(gollom);
-
-
-thelands[0].appendChild(the_hobbits);
-
-//
-
-var makeMiddleEarth = function () {
-   // create a section tag with an id of `middle-earth`
-   // add each land as an `article` tag
-   // inside each `article` tag include an `h1` with the name of the land
-   // append `middle-earth` to your document `body`
-
-const middle_earth = document.createElement('section');
-const the_shire = document.createElement('article');
-the_shire.innerHTML = "<h1>The Shire</h1>";
-middle_earth.appendChild(the_shire);
-
-const rivendell =  document.createElement('article');
-rivendell.innerHTML = "<h1>Rivendell</h1>";
-middle_earth.appendChild(rivendell);
-
-const mordor =  document.createElement('article');
-mordor.innerHTML = "<h1>Mordor</h1>";
-middle_earth.appendChild(mordor);
-
-
-document.body.appendChild(middle_earth);
-
-};
-
 makeMiddleEarth();
 
-var makeHobbits = function () {
-const frodo =  document.createElement('li');
-friendship =  document.createElement('ul');
-const frodo =  document.createElement('li');
-frodo.innerHTML = "Frodo Baggins";
-
-const samwise =  document.createElement('li');
-samwise.innerHTML =   'Samwise \'Sam\' Gamgee'
-
-
-the_shire.appendChild(friendship);
-friendship.appendChild(frodo);
-friendship.appendChild(samwise);
-
-  'Frodo Baggins',
-  'Samwise \'Sam\' Gamgee',
-  'Meriadoc \'Merry\' Brandybuck',
-  'Peregrin \'Pippin\' Took'
+const theShire = $(document.body).find( ":contains(Shire)" )
+const rivendell = $(document.body).find( ":contains(Rivendell)" )
+const mordor = $(document.body).find( ":contains(Mordor)" );
+const makeHobbits = () => {
+  // display an unordered list of hobbits in the shire (which is the first article tag on the page)
+  const hobbitList = $('<ul>');
+  for(let i = 0; i < hobbits.length; i++) {
+  // give each hobbit a class of hobbit
+    const hobbit = $('<li class="hobbit">');
+    hobbit.text(hobbits[i]);
+    hobbitList.append(hobbit);
+  }
+  theShire.append(hobbitList);
+}
+makeHobbits();
 
 
-};
-Part 3
-
-var keepItSecretKeepItSafe = function () {
-   // create a div with an id of `'the-ring'`
-   // give the div a class of `'magic-imbued-jewelry'`
-   // add the ring as a child of `Frodo`
-};
-Part 4
-
-var makeBuddies = function () {
-budz =  document.createElement('ul');
-const legolas =  document.createElement('li');
-legolas.innerHTML = "Legolass";
-
-const dude =  document.createElement('li');
-dude.innerHTML =   'Todd Herskovitz'
+const frodo = $(document.body).find( ":contains(Frodo)" );
+const keepItSecretKeepItSafe = () => {
+  // create a div with an id of 'the-ring'
+  const theRing = $('<div ID="the-ring" class="magic-imbued-jewelry">');
+  // add the ring as a child of Frodo
+  frodo.append(theRing);
+}
+keepItSecretKeepItSafe();
 
 
-rivendell.appendChild(budz);
-budz.appendChild(dude);
-budz.appendChild(legolas);
+const makeBuddies =  () => {
+  // create an aside tag
+  const aside = $('<aside>');
+  const buddyList = $('<ul>');
+  for(let i = 0; i < buddies.length; i++) {
+    // attach an unordered list of the 'buddies' in the aside
+    const buddy = $('<li>');
+    buddy.text(buddies[i]);
+    buddyList.append(buddy);
+  }
+  // insert your aside as a child element of rivendell
+  aside.append(buddyList);
+  rivendell.append(aside);
+}
+makeBuddies();
 
-};
-Part 5
+const strider = $(document.body).find( ":contains(Strider)");
 
-var beautifulStranger = function () {
-   // change the `'Strider'` text to `'Aragorn'`
-};
-Part 6
+const beautifulStranger = () => {
+  // change the 'Strider' textnode to 'Aragorn'
+  strider.text('Aragon');
+}
+beautifulStranger();
 
-var leaveTheShire = function () {
-   // assemble the `hobbits` and move them to `rivendell`
-rivendell.appendChild(friendship)
-};
-Part 7
+const hobbitses = $(document.body).find( ":contains(Hobbit)");
+const leaveTheShire = () => {
+  // assemble the hobbits and move them to Rivendell
+  rivendell.append(hobbitses);
+}
+leaveTheShire();
 
-var forgeTheFellowShip = function () {
-   // create a new div called `'the-fellowship'` within `rivendell`
-   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
-   // after each character is added make an alert that they // have joined your party
-};
-Part 8
+/*
+//What is query selector all? Check the docs. 
+const fellowshipMembers = rivendell.querySelectorAll('li');
 
-var theBalrog = function () {
-   // change the `'Gandalf'` text to `'Gandalf the White'`
-   // apply the following style to the element, make the // background 'white', add a grey border
-};
-Part 9
-
-var hornOfGondor = function () {
-   // pop up an alert that the horn of gondor has been blown
-   // Boromir's been killed by the Uruk-hai!
-   // Remove `Boromir` from the Fellowship
-};
-Part 10
-
-var itsDangerousToGoAlone = function (){
-   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
-   // add a div with an id of `'mount-doom'` to `Mordor`
-};
-Part 11
-
-mordor.appendChild(samwise);
-
-
- var weWantsIt = function () {
-   // Create a div with an id of `'gollum'` and add it to Mordor
-   // Remove `the ring` from `Frodo` and give it to `Gollum`
-   // Move Gollum into Mount Doom
+const forgeTheFellowShip = () => {
+  // create a new div called 'the-fellowship' within rivendell
+  const theFellowship = document.createElement('div');
+  theFellowship.setAttribute('id', 'the-fellowship');
+  for(let i = 0; i < fellowshipMembers.length; i++) {
+    theFellowship.appendChild(fellowshipMembers[i]);
+    // alert(fellowshipMembers[i].textContent + ' has joined the fellowship!');
+  }
+  // add each hobbit and buddy one at a time to 'the-fellowship'
+  // after each character is added make an alert that they have joined your party
+  rivendell.appendChild(theFellowship);
+}
+forgeTheFellowShip();
 
 
-};
-Part 12
+const gandalf = fellowshipMembers[0];
+const theBalrog = () => {
+  // change the 'Gandalf' textNode to 'Gandalf the White'
+  gandalf.textContent = 'Gandalf the White';
+  // apply style to the element
+  gandalf.style.border = '3px solid gray';
+  // make the background 'white', add a grey border
+  gandalf.style.backgroundColor = 'white';
+}
+theBalrog();
 
-var thereAndBackAgain = function () {
-   // remove `Gollum` and `the Ring` from the document
-   // Move all the `hobbits` back to `the shire`
-};
+
+const boromir = fellowshipMembers[4];
+const hornOfGondor = () => {
+  alert('the horn of gondor has blown');
+  // pop up an alert that the horn of gondor has been blown
+  boromir.style.textDecoration = 'line-through';
+  // Boromir's been killed by the Uruk-hai!
+  // Remove Boromir from the Fellowship
+  boromir.parentNode.removeChild(boromir)
+}
+hornOfGondor();
+
+
+const sam = fellowshipMembers[6];
+const itsDangerousToGoAlone = () => {
+  // take Frodo and Sam out of the fellowship and move them to Mordor
+  mordor.appendChild(frodo);
+  mordor.appendChild(sam);
+  const mountDoom = document.createElement('div');
+  mountDoom.setAttribute('id', 'mount-doom');
+  mordor.appendChild(mountDoom);
+  // add a div with an id of 'mount-doom' to Mordor
+}
+itsDangerousToGoAlone();
+
+
+const gollum, theRing;
+const weWantsIt = () => {
+  // Create a div with an id of 'gollum' and add it to Mordor
+  gollum = document.createElement('div');
+  gollum.setAttribute('id', 'gollum');
+  theRing = frodo.getElementsByTagName('div')[0];
+  gollum.appendChild(theRing);
+  // Remove the ring from Frodo and give it to Gollum
+  // Move Gollum into Mount Doom
+  const mountDoom = mordor.getElementsByTagName('div')[0];
+  mountDoom.appendChild(gollum);
+}
+weWantsIt();
+
+
+const thereAndBackAgain = () => {
+  gollum.parentElement.removeChild(gollum);
+  // remove Gollum and the Ring from the document
+  // remove all the baddies from the document
+  const hobbitUL = document.createElement('ul');
+  const hobbits = body.querySelectorAll('.hobbit');
+  for(let i = 0; i < hobbits.length; i++){
+    hobbitUL.appendChild(hobbits[i]);
+  }
+  theShire.appendChild(hobbitUL);
+  // Move all the hobbits back to the shire
+}
+thereAndBackAgain();*/

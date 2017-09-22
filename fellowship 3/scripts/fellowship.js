@@ -147,7 +147,7 @@ const itsDangerousToGoAlone = () => {
 itsDangerousToGoAlone();
 
 
-const gollum, theRing;
+const gollum = 0, theRing = 0;
 const weWantsIt = () => {
   // Create a div with an id of 'gollum' and add it to Mordor
   gollum = $('<div ID="gollum">');

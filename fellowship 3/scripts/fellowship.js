@@ -26,7 +26,7 @@ const makeMiddleEarth = () => {
       const land = $('<article>');
       // inside each article tag include an h1 with the name of the land
       const name = $('<h1>')
-      name.text(lands[i])
+      name.text(lands[i]);
       land.append(name);
       middleEarth.append(land);
     }
@@ -95,7 +95,7 @@ leaveTheShire();
 
 
 //What is query selector all? Check the docs. 
-const fellowshipMembers = rivendell.find( ":contains(<li)>)");
+const fellowshipMembers = rivendell.find( ":contains(li))");
 
 const forgeTheFellowShip = () => {
   // create a new div called 'the-fellowship' within rivendell
@@ -155,7 +155,7 @@ const weWantsIt = () => {
   gollum.append(theRing);
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
-  const mountDoom = mordor.find( ":contains(doom)>");
+  const mountDoom = mordor.find( ":contains(doom)");
   mountDoom.append(gollum);
 }
 weWantsIt();
@@ -166,7 +166,7 @@ const thereAndBackAgain = () => {
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
   const hobbitUL = ('<ul>');
-  const hobbits = body.find( ":contains(hobbits)>");
+  const hobbits = body.find( ":contains(hobbits)");
   for(let i = 0; i < hobbits.length; i++){
     hobbitUL.append(hobbits[i]);
   }

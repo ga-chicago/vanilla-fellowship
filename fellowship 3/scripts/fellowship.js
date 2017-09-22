@@ -93,21 +93,20 @@ const leaveTheShire = () => {
 }
 leaveTheShire();
 
-/*
+
 //What is query selector all? Check the docs. 
-const fellowshipMembers = rivendell.querySelectorAll('li');
+const fellowshipMembers = rivendell.find( ":contains(<li)>");
 
 const forgeTheFellowShip = () => {
   // create a new div called 'the-fellowship' within rivendell
-  const theFellowship = document.createElement('div');
-  theFellowship.setAttribute('id', 'the-fellowship');
+  const theFellowship = $("<div ID='the-fellowship'>");
   for(let i = 0; i < fellowshipMembers.length; i++) {
-    theFellowship.appendChild(fellowshipMembers[i]);
+    theFellowship.append(fellowshipMembers[i]);
     // alert(fellowshipMembers[i].textContent + ' has joined the fellowship!');
   }
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
-  rivendell.appendChild(theFellowship);
+  rivendell.append(theFellowship);
 }
 forgeTheFellowShip();
 
@@ -115,11 +114,11 @@ forgeTheFellowShip();
 const gandalf = fellowshipMembers[0];
 const theBalrog = () => {
   // change the 'Gandalf' textNode to 'Gandalf the White'
-  gandalf.textContent = 'Gandalf the White';
+  gandalf.text('Gandalf the White');
   // apply style to the element
-  gandalf.style.border = '3px solid gray';
+  gandalf.css('border', '3px solid gray');
   // make the background 'white', add a grey border
-  gandalf.style.backgroundColor = 'white';
+  gandalf.css('backgroundColor', 'white');
 }
 theBalrog();
 
@@ -128,13 +127,13 @@ const boromir = fellowshipMembers[4];
 const hornOfGondor = () => {
   alert('the horn of gondor has blown');
   // pop up an alert that the horn of gondor has been blown
-  boromir.style.textDecoration = 'line-through';
+  boromir.css('textDecoration', 'line-through');
   // Boromir's been killed by the Uruk-hai!
   // Remove Boromir from the Fellowship
-  boromir.parentNode.removeChild(boromir)
+  boromir.parentNode.remove(boromir)
 }
 hornOfGondor();
-
+/*
 
 const sam = fellowshipMembers[6];
 const itsDangerousToGoAlone = () => {

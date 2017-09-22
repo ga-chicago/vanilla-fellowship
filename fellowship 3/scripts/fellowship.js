@@ -95,7 +95,7 @@ leaveTheShire();
 
 
 //What is query selector all? Check the docs. 
-const fellowshipMembers = rivendell.find( ":contains(<li)>");
+const fellowshipMembers = rivendell.find( ":contains(<li)>)");
 
 const forgeTheFellowShip = () => {
   // create a new div called 'the-fellowship' within rivendell
@@ -133,16 +133,15 @@ const hornOfGondor = () => {
   boromir.parentNode.remove(boromir)
 }
 hornOfGondor();
-/*
+
 
 const sam = fellowshipMembers[6];
 const itsDangerousToGoAlone = () => {
   // take Frodo and Sam out of the fellowship and move them to Mordor
-  mordor.appendChild(frodo);
-  mordor.appendChild(sam);
-  const mountDoom = document.createElement('div');
-  mountDoom.setAttribute('id', 'mount-doom');
-  mordor.appendChild(mountDoom);
+  mordor.append(frodo);
+  mordor.append(sam);
+  const mountDoom = $('<div ID="mount-doom">');
+  mordor.append(mountDoom);
   // add a div with an id of 'mount-doom' to Mordor
 }
 itsDangerousToGoAlone();
@@ -151,14 +150,13 @@ itsDangerousToGoAlone();
 const gollum, theRing;
 const weWantsIt = () => {
   // Create a div with an id of 'gollum' and add it to Mordor
-  gollum = document.createElement('div');
-  gollum.setAttribute('id', 'gollum');
-  theRing = frodo.getElementsByTagName('div')[0];
-  gollum.appendChild(theRing);
+  gollum = $('<div ID="gollum">');
+  theRing = frodo.find( ":contains(ring)");
+  gollum.append(theRing);
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
-  const mountDoom = mordor.getElementsByTagName('div')[0];
-  mountDoom.appendChild(gollum);
+  const mountDoom = mordor.find( ":contains(doom)>");
+  mountDoom.append(gollum);
 }
 weWantsIt();
 

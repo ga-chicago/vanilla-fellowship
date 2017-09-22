@@ -162,15 +162,15 @@ weWantsIt();
 
 
 const thereAndBackAgain = () => {
-  gollum.parentElement.removeChild(gollum);
+  gollum.parent.remove(gollum);
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
-  const hobbitUL = document.createElement('ul');
-  const hobbits = body.querySelectorAll('.hobbit');
+  const hobbitUL = ('<ul>');
+  const hobbits = body.find( ":contains(hobbits)>");
   for(let i = 0; i < hobbits.length; i++){
-    hobbitUL.appendChild(hobbits[i]);
+    hobbitUL.append(hobbits[i]);
   }
-  theShire.appendChild(hobbitUL);
+  theShire.append(hobbitUL);
   // Move all the hobbits back to the shire
 }
-thereAndBackAgain();*/
+thereAndBackAgain();
